@@ -1,0 +1,146 @@
+<div class="dlg">
+  <div class="dlg-head">
+    <div class="dlg-title">ID : {{ data.row.caseNo }}</div>
+    <!-- <button mat-button mat-dialog-close class="btn-close"></button> -->
+  </div>
+
+  <div class="dlg-body">
+    <div class="dlg-title margin-v1">Abount this event</div>
+    <table class="detail-table" role="presentation">
+      <tbody>
+        <tr *ngFor="let f of fields">
+          <th class="label">{{ f.label }}</th>
+          <td class="value" [ngClass]="{ urgent: f.value === 'URGENT' }">
+            {{ f.value }}
+          </td>
+        </tr>
+      </tbody>
+    </table>
+  </div>
+  <div class="dlg-body">
+    <div class="space">
+      <div class="dlg-title margin-v1 padding-10">Log Activities</div>
+      <button
+        *ngIf="isViewMode"
+        type="button"
+        class="btn-add"
+        title="Add activity"
+        (click)="onAddActivity()"
+        [disabled]="isAdding"
+      >
+        +
+      </button>
+    </div>
+
+    <table class="log-table">
+      <thead>
+        <tr>
+          <th>#</th>
+          <th>Time</th>
+          <th>Action</th>
+          <th>By</th>
+          <th *ngIf="isViewMode">Action</th>
+        </tr>
+      </thead>
+
+      <tbody>
+        <!-- existing logs -->
+        <tr *ngFor="let act of caseDetail.activities; let i = index">
+          <td>{{ i + 1 }}</td>
+          <td>{{ act.time }}</td>
+          <td>{{ act.action }}</td>
+          <td>{{ act.by }}</td>
+          <td *ngIf="isViewMode" class="action-col">
+            <button
+              class="btn-delete"
+              title="Delete"
+              (click)="deleteActivity(i)"
+              [disabled]="isAdding"
+            >
+              <mat-icon>delete</mat-icon>
+            </button>
+          </td>
+        </tr>
+
+        <!-- add new row -->
+        <tr *ngIf="isAdding">
+          <td>+</td>
+          <td>
+            <input
+              type="datetime-local"
+              class="log-input"
+              [(ngModel)]="newActivity.time"
+            />
+          </td>
+          <td>
+            <input
+              type="text"
+              class="log-input"
+              placeholder="Action"
+              [(ngModel)]="newActivity.action"
+            />
+          </td>
+          <td>
+            <div class="row-actions">
+              <input
+                type="text"
+                class="log-input"
+                placeholder="By"
+                [(ngModel)]="newActivity.by"
+              />
+              <button class="btn-save" (click)="saveActivity()">✔</button>
+              <button class="btn-cancel" (click)="cancelActivity()">✖</button>
+            </div>
+          </td>
+        </tr>
+
+        <tr *ngIf="!isAdding && caseDetail.activities?.length === 0">
+          <td colspan="4" style="text-align: center">No activity log</td>
+        </tr>
+      </tbody>
+    </table>
+  </div>
+
+  <div class="dlg-body zone-border">
+    <div class="dlg-title margin-v1">Impact Node</div>
+    <div class="radio-group">
+      <label *ngFor="let acc of affectedAccounts" class="radio-item">
+        <input
+          type="radio"
+          name="affectedAccount"
+          [value]="acc"
+          [disabled]="!isViewMode"
+          [readonly]="!isViewMode"
+          [(ngModel)]="selectedAccount"
+        />
+        {{ acc }}
+      </label>
+    </div>
+  </div>
+  <div class="dlg-body zone-border">
+    <div class="dlg-title margin-v1">Analysis</div>
+    <div class="cause">
+      <label class="margin-v1">cause:</label>
+      <input
+        type="text"
+        class="analysis-input"
+        [(ngModel)]="caseDetail.analysis.confirmedCause"
+        [disabled]="!isViewMode"
+        [readonly]="!isViewMode"
+      />
+    </div>
+    <div><br /></div>
+    <div class="cause">
+      <label>note:</label>
+      <textarea
+        class="analysis-textarea"
+        rows="4"
+        [(ngModel)]="caseDetail.analysis.notes"
+        [disabled]="!isViewMode"
+        [readonly]="!isViewMode"
+        readonly
+      ></textarea>
+      <div class="cause"></div>
+    </div>
+  </div>
+</div>

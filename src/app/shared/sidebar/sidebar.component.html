@@ -1,0 +1,101 @@
+<div class="container">
+  <div class="row">
+    <div class="col-lg-3 col-md-2 sidebar-menu">
+      <div class="row">
+        <div class="col-lg-2 sidebar-main">
+          <!-- <div class="avaltal text-center">
+            <img
+              class="img-avartal"
+              src="../../../assets/woman.png"
+              alt="Girl in a jacket"
+              width="50"
+              height="50"
+            />
+          </div> -->
+          <div class="menu-icon">
+            <div
+              class="center-icon"
+              *ngFor="let item of iconMain"
+              routerLinkActive="is-active"
+            >
+              <a [routerLink]="item.route">
+                <span class="icon" [innerHTML]="item.icon"></span>
+              </a>
+            </div>
+          </div>
+          <div style="margin-top: 60px; margin-bottom: 20px">
+            <div class="menu-icon">
+              <div class="center-icon" *ngFor="let item of iconBottom">
+                <span class="icon" [innerHTML]="item.icon"> </span>
+              </div>
+            </div>
+          </div>
+        </div>
+        <div class="col-lg-3 main-active" *ngIf="showBlackPanel">
+          <div class="active-menu">
+            <button class="active-button" (click)="onSelectProject($event)">
+              <span>Issue Tracking</span>
+              <i
+                class="fa-solid"
+                [ngClass]="
+                  showDetailInBotton ? 'fa-chevron-up' : 'fa-chevron-down'
+                "
+              ></i>
+            </button>
+          </div>
+          <div class="active-detail" *ngIf="showDetailInBotton">
+            <ul>
+              <li
+                *ngFor="let p of projects"
+                [style.--bullet-color]="p.color"
+                (click)="onSelectProject(p)"
+                [ngClass]="{ active: defaultActiveProjects.includes(p.name) }"
+              >
+                {{ p.name }}
+              </li>
+            </ul>
+          </div>
+          <div class="active-detail list" *ngIf="showActiveDetail">
+            <ul>
+              <li
+                *ngFor="let p of ActiveDetail"
+                [style.--bullet-color]="p.color"
+                [ngClass]="{ active: defaultActiveProjects.includes(p.name) }"
+              >
+                {{ p.name }}
+              </li>
+            </ul>
+          </div>
+
+          <!-- <div class="active-menu">
+            <button class="active-button">
+              <span>dribble</span>
+              <i class="fa-solid fa-plus"></i>
+            </button>
+          </div>
+          <div class="active-detail">
+            <ul>
+              <li *ngFor="let p of dribble" [style.--bullet-color]="p.color">
+                {{ p.name }}
+              </li>
+            </ul>
+          </div> -->
+          <!-- <div class="active-menu">
+            <button class="active-button">
+              <span>behance</span>
+              <i class="fa-solid fa-plus"></i>
+            </button>
+          </div>
+          <div class="active-detail">
+            <ul>
+              <li *ngFor="let p of behance" [style.--bullet-color]="p.color">
+                {{ p.name }}
+              </li>
+            </ul>
+          </div> -->
+        </div>
+      </div>
+    </div>
+    <div class="col-lg-8 col-md-2" style="background-color: aqua"></div>
+  </div>
+</div>

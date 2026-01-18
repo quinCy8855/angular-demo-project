@@ -1,0 +1,120 @@
+:host {
+  display: block;
+  width: 100%;
+}
+
+.page {
+  width: 100%;
+}
+
+.search {
+  width: 420px;
+  max-width: 50vw;
+  margin-bottom: 12px;
+}
+
+.table-wrap {
+  width: 100%;
+  overflow: auto;
+  background: #fff;
+  border-radius: 8px;
+  padding: 8px;
+  box-sizing: border-box;
+}
+.title {
+    color: #6366f1;
+    font-size: 25px;
+}
+
+table {
+  width: 100%;
+}
+.margin-v1{
+    margin: 10px 10px 10px 0px;
+}
+.right {
+  text-align: left;
+}
+.left {
+     text-align: left;
+}
+.search-input {
+  width: 420px;
+  padding: 10px 12px;
+  border-radius: 8px;
+  border: 1px solid #d0d5dd;
+  outline: none;
+}
+
+.search-input:focus {
+  border-color: #6366f1;
+}
+.button {
+    cursor: pointer;
+  border-radius: 50px;
+  border: burlywood;
+  padding: 6px;
+  background-color: #b9b9f0;
+  width: 100px;
+  max-width: 100%;
+  color: #fff;
+}
+
+.button-status {
+  padding: 4px 12px;
+  border-radius: 16px;
+  font-size: 12px;
+  font-weight: 600;
+  border: none;
+  cursor: default;
+  min-width: 90px;
+  text-align: center;
+}
+td.mat-mdc-cell.status-cell {
+  display: flex;
+  align-items: center;     
+  justify-content: center;  
+ 
+}
+ .status-pill {
+    cursor: pointer;
+ }
+
+ 
+.pill-new {
+  background-color: #e3f2fd;
+  color: #1e88e5;
+}
+
+ 
+.pill-pending {
+  background-color: #e8f1ff;
+  color: #2f6fed;
+}
+
+ 
+.pill-approved {
+  background-color: #e6f4ea;
+  color: #2e7d32;
+}
+
+ 
+.pill-rejected {
+  background-color: #fdecea;
+  color: #d32f2f;
+}
+
+
+.cdk-column-priority {
+  width: 48px;    
+  max-width: 48px;
+  text-align: center;
+  padding-left: 0;
+  padding-right: 0;
+ 
+}
+.priority-icon {
+  height: auto; 
+  width: auto;
+  
+}

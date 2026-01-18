@@ -1,0 +1,165 @@
+
+$white: #ffffff;
+.container{
+    margin-left: 0 !important;
+.sidebar-menu {
+    background-color:rgb(19, 19, 19);
+    border-radius: 3px;
+    width: 400px;
+    height: 100vh;
+        .sidebar-main{
+            margin: 10px 10px 10px 10px;
+            background-color:  rgb(30, 30, 30);
+            border: 3px solid rgb(48, 48, 48);
+            padding: 10px 10px 10px 10px;
+            // border-radius: 10px;
+            width: 100px;
+            height: 95vh;
+            .avaltal{
+                width: 80px;
+                height: 80px;
+                border-radius: 20px;
+                background-color: rgb(50 57 85);
+                align-items: center;
+                justify-items: center;
+                display: flex;
+                justify-content: space-around;
+                margin-bottom: 20px;
+                    }
+                        }
+                 .menu-icon{
+                display: flex;
+                flex-direction: column;
+                cursor: pointer;
+                    .center-icon {
+                        display: flex;
+                        justify-content: center;
+                        padding: 20px 20px 20px 10px;
+                        width: 90px;
+                        border-start-start-radius: 7px;
+                        border-end-start-radius: 7px;
+                       
+                     &:hover {
+                        justify-content: center;
+                        background-color: rgb(167, 167, 167);
+                       
+                        border-start-start-radius: 7px;
+                        border-end-start-radius: 7px;
+                       
+                  }
+                 
+                 }
+                  .icon {
+                    color: rgb(255, 254, 254);
+                    font-size: 24px;
+                    justify-content: center;
+                    //  border: 1px solid #ccc;
+                        
+                
+                 } 
+                   }  
+                }
+     }
+ .main-active{
+ 
+    border-radius: 3px;
+    width: 250px;
+    margin: 10px 10px 10px 10px;
+    .active-button{
+        margin-top: 10px;
+        border-radius: 5px;
+        width: 100%;
+        border: 0;
+        background-color: rgb(36, 36, 36);
+        height: 5vh;
+        color: $white;
+        display: flex;
+        align-items: center;
+        font-size: 18px;
+        padding: 10px 10px 10px 10px;
+        justify-content: space-between;
+        
+    }
+    .active-detail ul {
+  list-style: none; 
+  margin: 0;
+  
+}
+.active-detail 
+{ 
+    transition: max-height 0.4s ease, opacity 0.4s ease;
+  margin-top: 20px;
+  display: flex;
+  justify-content: center;
+ .show {
+  max-height: 500px; 
+  opacity: 1;
+}
+  li {
+  position: relative;
+  padding-left: 35px; 
+  line-height: 3;
+  font-family: 'Poppins', sans-serif;
+  font-size: 18px; 
+  color: $white;
+    width: 200px;
+  &:hover{
+  background-color: #1a1a1aa6;
+  border-radius: 4px;
+  width: 200px;
+}
+}
+}
+.active-detail li::before {
+  content: "";
+  position: absolute;
+  left: 12px; top: 50%;
+  width: 12px; height: 12px;
+  background: var(--bullet-color, #8e44ad);
+  border-radius: 4px;
+  transform: translateY(-50%);
+  padding-left: 10px;
+
+}
+ .list{
+  line-height: 1;
+  margin-top: 1px;
+ }.list::before  {
+  content: "";
+  left: 50px; top: 50%;
+  padding-left: 50px;
+  }
+}
+
+.test {
+ display: flex;
+      background-color: aqua;
+      padding-left: 15px;
+      justify-content: left;
+      font-size: 20px;
+      align-items: center;
+    }
+
+ .is-active {
+       justify-content: center;
+       background-color: rgb(146, 146, 146);
+       border-start-start-radius: 7px;
+       border-end-start-radius: 7px;
+       .icon {
+         color: #1a1a1a !important;
+           border:none !important;
+                        }
+}
+
+.active-detail li {
+  color: #cfcfcf;
+}
+
+.active-detail {
+   color: #1a1a1a; 
+   li.active {
+   background-color: rgb(73, 73, 73);
+   cursor: pointer;
+} 
+ 
+}
